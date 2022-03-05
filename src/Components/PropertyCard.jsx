@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const PropertyCard = (props) => {
   return (
     <>
-      <div className="card my-5 mx-5" style={{ width: "85%" }}>
+      <div className="card my-5 mx-5" key={props.property._key} style={{ width: "85%" }}>
         <div className="row">
           <div style={{ width: "50%" }}>
             <img

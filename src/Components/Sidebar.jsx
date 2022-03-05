@@ -30,32 +30,32 @@ const Sidebar = () => {
 
   return (
     <>
-      <div class="filter">
-        <div class="container mt-5">
+      <div className="filter">
+        <div className="container mt-5">
           <h4> Property Type</h4>
 
           <hr />
 
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="CommercialType"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label className="form-check-label" htmlFor="flexCheckDefault">
               Commercial
             </label>
           </div>
 
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="HouseHoldType"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label className="form-check-label" htmlFor="flexCheckDefault">
               House Hold
             </label>
           </div>
@@ -63,55 +63,55 @@ const Sidebar = () => {
           <hr />
           <h4 className="mt-5"> Rent /month </h4>
           <hr />
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="lessthan10"
               //onChange={handleRentFilter}
               onClick={()=>{handleRent("lessthan10")}}
             />
-            <label class="form-check-label" for="lessthan10">
+            <label className="form-check-label" htmlFor="lessthan10">
               less than 10000
             </label>
           </div>
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="between10and25"
               //onChange={handleRentFilter}
               onClick={()=>{handleRent("between10and25")}}
             />
-            <label class="form-check-label" for="between10and25">
+            <label className="form-check-label" htmlFor="between10and25">
               10000-25000
             </label>
           </div>
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="between25and50"
               //onChange={handleRentFilter}
               onClick={()=>{handleRent("between25and50")}}
             />
-            <label class="form-check-label" for="between25and50">
+            <label className="form-check-label" htmlFor="between25and50">
               25000-50000
             </label>
           </div>
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="morethan50"
               //onChange={handleRentFilter}
               onClick={()=>{handleRent("morethan50")}}
             />
-            <label class="form-check-label" for="morethan50">
+            <label className="form-check-label" htmlFor="morethan50">
               50000+
             </label>
           </div>
