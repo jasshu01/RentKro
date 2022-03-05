@@ -1,34 +1,32 @@
-import React, { useContext, useEffect, useState } from "react";
-import FilterContext from "../context/FilterContext";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import {actionCreators} from "../state/index"
 const Sidebar = () => {
-  const Filter = useContext(FilterContext);
 
-  // const [RentFilters, setRentFilters] = useState({
-  //   lessthan10: false,
-  //   between10and25: false,
-  //   between25and50: false,
-  //   morethan50: false,
-  // });
+  const dispatch = useDispatch();
+  const{handleRent}= bindActionCreators(actionCreators,dispatch);
 
-  const handleRent = async (event) => {
-    // console.log(event.target.id);
-    var curr = event.target.id;
-    // var NewFilter = RentFilters;
+  // const handleRentFilter = async (event) => {
+  //   // console.log(event.target.id);
+  //   var curr = event.target.id;
+  //   // var NewFilter = RentFilters;
 
-    if (curr === "lessthan10") {
-      Filter.RentFilters.lessthan10 = !Filter.RentFilters.lessthan10;
-    }
-    if (curr === "between10and25") {
-      Filter.RentFilters.between10and25 = !Filter.RentFilters.between10and25;
-    }
-    if (curr === "between25and50") {
-      Filter.RentFilters.between25and50 = !Filter.RentFilters.between25and50;
-    }
-    if (curr === "morethan50") {
-      Filter.RentFilters.morethan50 = !Filter.RentFilters.morethan50;
-    }
-    console.log(Filter.RentFilters);
-  };
+  //   if (curr === "lessthan10") {
+  //     Filter.RentFilters.lessthan10 = !Filter.RentFilters.lessthan10;
+  //   }
+  //   if (curr === "between10and25") {
+  //     Filter.RentFilters.between10and25 = !Filter.RentFilters.between10and25;
+  //   }
+  //   if (curr === "between25and50") {
+  //     Filter.RentFilters.between25and50 = !Filter.RentFilters.between25and50;
+  //   }
+  //   if (curr === "morethan50") {
+  //     Filter.RentFilters.morethan50 = !Filter.RentFilters.morethan50;
+  //   }
+
+  // };
+
 
   return (
     <>
@@ -71,7 +69,8 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="lessthan10"
-              onChange={handleRent}
+              //onChange={handleRentFilter}
+              onClick={()=>{handleRent("lessthan10")}}
             />
             <label class="form-check-label" for="lessthan10">
               less than 10000
@@ -83,7 +82,8 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="between10and25"
-              onChange={handleRent}
+              //onChange={handleRentFilter}
+              onClick={()=>{handleRent("between10and25")}}
             />
             <label class="form-check-label" for="between10and25">
               10000-25000
@@ -95,7 +95,8 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="between25and50"
-              onChange={handleRent}
+              //onChange={handleRentFilter}
+              onClick={()=>{handleRent("between25and50")}}
             />
             <label class="form-check-label" for="between25and50">
               25000-50000
@@ -107,7 +108,8 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="morethan50"
-              onChange={handleRent}
+              //onChange={handleRentFilter}
+              onClick={()=>{handleRent("morethan50")}}
             />
             <label class="form-check-label" for="morethan50">
               50000+
