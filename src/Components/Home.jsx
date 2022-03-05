@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropertyCard from "./PropertyCard";
 import PropertyList from "./PropertyList";
 
+
 const Home = () => {
+
+  const Filter=useContext("FilterContext");
+
   return (
     <>
       {PropertyList.map((ele) => {

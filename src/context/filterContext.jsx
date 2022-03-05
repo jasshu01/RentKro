@@ -1,6 +1,6 @@
 
 import { createContext } from "react";
 
-const filter=createContext();
+const FilterContext=createContext();
 
-export default filter;
+export default FilterContext;

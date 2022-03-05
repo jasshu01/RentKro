@@ -1,15 +1,19 @@
-import filter from "./filterContext";
-import { useState } from "react";
-const FilterState=(props)=>{
-    const parameters={
+import FilterContext from "./FilterContext";
 
-    }
-    update=>()=>{
-        setState({
 
-        });
-    }
+const FilterState = (props) => {
+  const RentFilters = {
+    lessthan10: false,
+    between10and25: false,
+    between25and50: false,
+    morethan50: false,
+  };
 
-    const [filter, setFilter] = useState(parameters);
+  return (
+    <FilterContext.Provider value={{RentFilters}}>
+      {props.children}
+    </FilterContext.Provider>
+  );
+};
 
-}
+export default FilterState;

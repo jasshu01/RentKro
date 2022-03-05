@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-
+import React, { useContext, useEffect, useState } from "react";
+import FilterContext from "../context/FilterContext";
 const Sidebar = () => {
-  const [RentFilters, setRentFilters] = useState({
-    lessthan10: false,
-    between10and25: false,
-    between25and50: false,
-    morethan50: false,
-  });
+  const Filter = useContext(FilterContext);
+
+  // const [RentFilters, setRentFilters] = useState({
+  //   lessthan10: false,
+  //   between10and25: false,
+  //   between25and50: false,
+  //   morethan50: false,
+  // });
 
   const handleRent = async (event) => {
-    console.log(event.target.id);
+    // console.log(event.target.id);
     var curr = event.target.id;
-    var NewFilter = RentFilters;
+    // var NewFilter = RentFilters;
 
     if (curr === "lessthan10") {
-      NewFilter.lessthan10 = !NewFilter.lessthan10;
+      Filter.RentFilters.lessthan10 = !Filter.RentFilters.lessthan10;
     }
     if (curr === "between10and25") {
-      NewFilter.between10and25 = !NewFilter.between10and25;
+      Filter.RentFilters.between10and25 = !Filter.RentFilters.between10and25;
     }
     if (curr === "between25and50") {
-      NewFilter.between25and50 = !NewFilter.between25and50;
+      Filter.RentFilters.between25and50 = !Filter.RentFilters.between25and50;
     }
     if (curr === "morethan50") {
-      NewFilter.morethan50 = !NewFilter.morethan50;
+      Filter.RentFilters.morethan50 = !Filter.RentFilters.morethan50;
     }
-
-    setRentFilters(NewFilter);
-    console.log(RentFilters);
+    console.log(Filter.RentFilters);
   };
 
   return (
