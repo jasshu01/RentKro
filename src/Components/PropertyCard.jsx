@@ -18,14 +18,17 @@ const PropertyCard = (props) => {
 
           <div style={{ width: "35%" }} className="card-body">
             <h5 className="card-title" id="propertyID">
-              House No. 116 + {props.pid}
+              {props.property.PropertyID}
+            </h5>
+            <h5 className="card-title2" id="propertyName">
+              {props.property.ProportyName}
             </h5>
 
             <p className="card-text" id="location">
               <a
                 style={{ color: "black", textDecoration: "none" }}
                 target="_blank"
-                href="https://www.google.com/maps/dir/30.2882558,75.3593723/St+Number+2,+Tapa,+Punjab+148108/@30.2947293,75.359364,16z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3910e9b681d11a53:0xfd6504d6be8dcff9!2m2!1d75.367702!2d30.3013446!3e0"
+                href={props.property.Location}
               >
                 <MdLocationOn /> CheckOut Location
               </a>
@@ -34,17 +37,17 @@ const PropertyCard = (props) => {
               className="list-group list-group-flush"
               style={{ width: "90%" }}
             >
-              <li className="list-group-item" id="numberOfRooms">
-                1BHK-2BHK-3BHK
+              <li className="list-group-item">
+                <span id="numberOfRooms">{props.property.noOfRooms}</span> BHK
               </li>
               <li className="list-group-item">
-                Rent : Rs.<span id="rent"> 10000 </span> /month{" "}
+                Rent : Rs.<span id="rent"> {props.property.rent} </span> /month{" "}
               </li>
               <li className="list-group-item">
-                Area : <span id="area">1000</span> sqft
+                Area : <span id="area"> {props.property.area}</span> sqft
               </li>
               <li className="list-group-item">
-                any Specific information
+                {props.property.Recommendation}
               </li>
             </ul>
 
@@ -60,7 +63,7 @@ const PropertyCard = (props) => {
           </div>
 
           <div style={{ width: "10%", margin: "auto" }}>
-            <Facilities pid={props.pid} />
+            <Facilities pid={props.property.Facilities} />
           </div>
         </div>
       </div>

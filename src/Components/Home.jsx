@@ -1,16 +1,13 @@
 import React from "react";
 import PropertyCard from "./PropertyCard";
+import PropertyList from "./PropertyList";
 
 const Home = () => {
   return (
     <>
-      <PropertyCard pid="1" />
-      <PropertyCard pid="2"/>
-      <PropertyCard pid="2"/>
-      <PropertyCard pid="2"/>
-      <PropertyCard pid="2"/>
-      <PropertyCard pid="2"/>
-      <PropertyCard pid="2"/>
+      {PropertyList.map((ele) => {
+        return <PropertyCard property={ele} />;
+      })}
     </>
   );
 };
