@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Sidebar = () => {
+  const [RentFilters, setRentFilters] = useState([]);
+
+  const handleRent = (event) => {
+
+    console.log(event.target.id)
+    if (RentFilters.find(obj => obj.prop === event.target.id)) {
+      var index = RentFilters.indexOf(event.target.id);
+      delete RentFilters[index];
+    } else {
+      RentFilters.push(event.target.id);
+    }
+
+    console.log(RentFilters);
+  };
+
   return (
     <>
       <div class="filter">
@@ -42,8 +57,9 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="lessthan10000"
+              onChange={handleRent}
             />
-            <label class="form-check-label" for="lessthan10000">
+            <label class="form-check-label" for="lessthan10">
               less than 10000
             </label>
           </div>
@@ -53,6 +69,7 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="between10and25"
+              onChange={handleRent}
             />
             <label class="form-check-label" for="between10and25">
               10000-25000
@@ -64,6 +81,7 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="between25and50"
+              onChange={handleRent}
             />
             <label class="form-check-label" for="between25and50">
               25000-50000
@@ -75,6 +93,7 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="morethan50"
+              onChange={handleRent}
             />
             <label class="form-check-label" for="morethan50">
               50000+
