@@ -1,18 +1,32 @@
 import React, { useState } from "react";
 
 const Sidebar = () => {
-  const [RentFilters, setRentFilters] = useState([]);
+  const [RentFilters, setRentFilters] = useState({
+    lessthan10: false,
+    between10and25: false,
+    between25and50: false,
+    morethan50: false,
+  });
 
-  const handleRent = (event) => {
+  const handleRent = async (event) => {
+    console.log(event.target.id);
+    var curr = event.target.id;
+    var NewFilter = RentFilters;
 
-    console.log(event.target.id)
-    if (RentFilters.find(obj => obj.prop === event.target.id)) {
-      var index = RentFilters.indexOf(event.target.id);
-      delete RentFilters[index];
-    } else {
-      RentFilters.push(event.target.id);
+    if (curr === "lessthan10") {
+      NewFilter.lessthan10 = !NewFilter.lessthan10;
+    }
+    if (curr === "between10and25") {
+      NewFilter.between10and25 = !NewFilter.between10and25;
+    }
+    if (curr === "between25and50") {
+      NewFilter.between25and50 = !NewFilter.between25and50;
+    }
+    if (curr === "morethan50") {
+      NewFilter.morethan50 = !NewFilter.morethan50;
     }
 
+    setRentFilters(NewFilter);
     console.log(RentFilters);
   };
 
@@ -56,7 +70,7 @@ const Sidebar = () => {
               class="form-check-input"
               type="checkbox"
               value=""
-              id="lessthan10000"
+              id="lessthan10"
               onChange={handleRent}
             />
             <label class="form-check-label" for="lessthan10">
