@@ -55,7 +55,7 @@ const PropertyCard = (props) => {
               <Link
                 className="nav-link"
                 style={{ color: "white", textDecoration: "none" }}
-                to={"/" + props.pid}
+                to={"/details" + props.property.PropertyID}
               >
                 More Details
               </Link>
