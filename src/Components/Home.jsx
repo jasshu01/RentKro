@@ -3,20 +3,19 @@ import FilterContext from "../context/FilterContext";
 import PropertyCard from "./PropertyCard";
 import PropertyList from "./PropertyList";
 import { useSelector } from "react-redux";
+
 const Home = () => {
   const Filter = useSelector((state) => state.filter);
-
   // console.log(Filter);
 
   return (
-    <> 
+    <>
+      {/* <h1>{`${Filter.lessthan10}`}</h1>
+      <h1>{`${Filter.between10and25}`}</h1>
+      <h1>{`${Filter.between25and50}`}</h1>
+      <h1>{`${Filter.morethan50}`}</h1> */}
 
-      <h1>{`${Filter.RentFilters.lessthan10}`}</h1>
-      <h1>{`${Filter.RentFilters.between10and25}`}</h1>
-      <h1>{`${Filter.RentFilters.between25and50}`}</h1>
-      <h1>{`${Filter.RentFilters.morethan50}`}</h1>
-
-      {/* {PropertyList.map((ele) => {
+      {PropertyList.map((ele) => {
         if (
           Filter.RentFilters.lessthan10 == false &&
           Filter.RentFilters.between10and25 == false &&
@@ -46,7 +45,7 @@ const Home = () => {
         if (Filter.RentFilters.morethan50 == true && ele.rent >= 50000) {
           return <PropertyCard key={ele._key} property={ele} />;
         }
-      })} */}
+      })}
     </>
   );
 };
