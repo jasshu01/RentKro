@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import {actionCreators} from "../state/index"
+import { actionCreators } from "../state/index";
 const Sidebar = () => {
-
   const dispatch = useDispatch();
-  const{handleRent}= bindActionCreators(actionCreators,dispatch);
+  const { handleRent } = bindActionCreators(actionCreators, dispatch);
 
   // const handleRentFilter = async (event) => {
   //   // console.log(event.target.id);
@@ -27,8 +26,6 @@ const Sidebar = () => {
 
   // };
 
-
-  
   return (
     <>
       <div className="filter">
@@ -37,30 +34,39 @@ const Sidebar = () => {
 
           <hr />
 
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="CommercialType"
-            />
-            <label className="form-check-label" htmlFor="flexCheckDefault">
-              Commercial
-            </label>
-          </div>
+          <div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                value="Commercial"
+                id="Commercial"
+                name="PropertyType"
+                onClick={() => {
+                  handleRent("Commercial");
+                }}
+              />
+              <label className="form-check-label" htmlFor="PropertyType">
+                Commercial
+              </label>
+            </div>
 
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="HouseHoldType"
-            />
-            <label className="form-check-label" htmlFor="flexCheckDefault">
-              House Hold
-            </label>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                value="NonCommercial"
+                id="NonCommercial"
+                name="PropertyType"
+                onClick={() => {
+                  handleRent("NonCommercial");
+                }}
+              />
+              <label className="form-check-label" htmlFor="PropertyType">
+                Non-Commercial
+              </label>
+            </div>
           </div>
-
           <hr />
           <h4 className="mt-5"> Rent /month </h4>
           <hr />
@@ -70,8 +76,9 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="lessthan10"
-              //onChange={handleRentFilter}
-              onClick={()=>{handleRent("lessthan10")}}
+              onClick={() => {
+                handleRent("lessthan10");
+              }}
             />
             <label className="form-check-label" htmlFor="lessthan10">
               less than 10000
@@ -83,8 +90,9 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="between10and25"
-              //onChange={handleRentFilter}
-              onClick={()=>{handleRent("between10and25")}}
+              onClick={() => {
+                handleRent("between10and25");
+              }}
             />
             <label className="form-check-label" htmlFor="between10and25">
               10000-25000
@@ -96,8 +104,9 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="between25and50"
-              //onChange={handleRentFilter}
-              onClick={()=>{handleRent("between25and50")}}
+              onClick={() => {
+                handleRent("between25and50");
+              }}
             />
             <label className="form-check-label" htmlFor="between25and50">
               25000-50000
@@ -109,8 +118,9 @@ const Sidebar = () => {
               type="checkbox"
               value=""
               id="morethan50"
-              //onChange={handleRentFilter}
-              onClick={()=>{handleRent("morethan50")}}
+              onClick={() => {
+                handleRent("morethan50");
+              }}
             />
             <label className="form-check-label" htmlFor="morethan50">
               50000+

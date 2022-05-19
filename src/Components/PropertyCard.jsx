@@ -21,7 +21,7 @@ const PropertyCard = (props) => {
               {props.property.PropertyID}
             </h5>
             <h5 className="card-title2" id="propertyName">
-              {props.property.ProportyName}
+              {props.property.PropertyName}
             </h5>
 
             <p className="card-text" id="location">
@@ -37,9 +37,17 @@ const PropertyCard = (props) => {
               className="list-group list-group-flush"
               style={{ width: "90%" }}
             >
+
+
+
+        
+           
               <li className="list-group-item">
                 <span id="numberOfRooms">{props.property.noOfRooms}</span> BHK
               </li>
+
+
+
               <li className="list-group-item">
                 Rent : Rs.<span id="rent"> {props.property.rent} </span> /month{" "}
               </li>
